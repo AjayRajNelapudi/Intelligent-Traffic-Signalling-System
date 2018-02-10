@@ -22,9 +22,9 @@ def emulated_sleep(time_slice, direction):
             break
 
     stop = time.time()
-    active = False
 
     run_time = stop - start
+    active = False
     print('Served time:' ,int(run_time), 'seconds')
 
     global rem_time
@@ -33,6 +33,7 @@ def emulated_sleep(time_slice, direction):
     if run_time + 5 < time_slice:
         rem_time = time_slice - run_time
         rem_dir = direction
+        print ('stored')
 
     else:
         rem_time = 0

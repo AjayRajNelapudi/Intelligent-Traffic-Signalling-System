@@ -10,7 +10,6 @@ def emergency_detect():
         x = int(input())
         if x >= 1 and x <= 4:
             side = x
-            print(side)
             flag = True
         elif x == 0:
             side = -1

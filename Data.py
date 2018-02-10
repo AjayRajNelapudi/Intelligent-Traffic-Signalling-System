@@ -1,2 +1,2 @@
-traffic = [14, 22, 34, 14]
+traffic = [20, 10, 34, 14]
 ev_queue = []
