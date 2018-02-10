@@ -7,3 +7,5 @@ def set(direction):
         print('C')
     elif direction == 3:
         print('D')
+    else:
+        print('Invalid Select')
