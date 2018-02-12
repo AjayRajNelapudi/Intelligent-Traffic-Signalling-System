@@ -1,5 +1,6 @@
 import time
 import Buffer
+import threading
 
 active = False
 rem_time = 0
@@ -7,11 +8,13 @@ rem_dir = -1
 kill_flag = False
 
 def emulated_sleep(time_slice, direction):
-    global kill_flag
-    kill_flag = False
+
 
     global active
     active = True
+
+    global kill_flag
+    kill_flag = False
 
     Buffer.set(direction)
     start = time.time()
@@ -23,8 +26,9 @@ def emulated_sleep(time_slice, direction):
 
     stop = time.time()
 
+
     run_time = stop - start
-    active = False
+
     print('Served time:' ,int(run_time), 'seconds')
 
     global rem_time
@@ -34,6 +38,4 @@ def emulated_sleep(time_slice, direction):
         rem_time = time_slice - run_time
         rem_dir = direction
 
-    else:
-        rem_time = 0
-        rem_dir = -1
+    active = False
