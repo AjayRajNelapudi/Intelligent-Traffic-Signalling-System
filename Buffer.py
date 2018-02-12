@@ -1,6 +1,5 @@
 # This file is only to send the signal to arduino board to set the proper direction
 def set(direction):
-
     if direction == 0:
         print('A')
     elif direction == 1:

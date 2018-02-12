@@ -1,15 +1,13 @@
 import time
 import Buffer
-import threading
 
 active = False
 rem_time = 0
 rem_dir = -1
 kill_flag = False
+emergency = False
 
 def emulated_sleep(time_slice, direction):
-
-
     global active
     active = True
 
@@ -38,4 +36,6 @@ def emulated_sleep(time_slice, direction):
         rem_time = time_slice - run_time
         rem_dir = direction
 
+    global emergency
+    emergency = False
     active = False

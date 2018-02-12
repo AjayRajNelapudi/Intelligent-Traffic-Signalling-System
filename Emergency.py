@@ -1,7 +1,6 @@
 side = -1
 flag = False
 
-
 def emergency_detect():
     global flag
 
