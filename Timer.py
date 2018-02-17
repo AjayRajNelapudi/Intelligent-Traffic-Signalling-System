@@ -6,10 +6,14 @@ rem_time = 0
 rem_dir = -1
 kill_flag = False
 emergency = False
+current_dir = -1
 
 def emulated_sleep(time_slice, direction):
     global active
     active = True
+
+    global current_dir
+    current_dir = direction
 
     global kill_flag
     kill_flag = False

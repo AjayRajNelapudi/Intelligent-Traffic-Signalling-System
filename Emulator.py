@@ -16,6 +16,7 @@ def emulate():
 
         if server.active:
             # To continuously monitor the flags for emergency vehicles
+
             if not server.emergency:
                 server.kill_flag = emg.flag
 
@@ -29,8 +30,9 @@ def emulate():
                     while server.active:
                         pass
 
-                    data.rem_time = server.rem_time
-                    data.rem_dir = server.rem_dir
+                    if server.current_dir != emg.side - 1:
+                        data.rem_time = server.rem_time
+                        data.rem_dir = server.rem_dir
 
                     #resetting timer data
                     server.rem_time = 0
